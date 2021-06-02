@@ -11,16 +11,16 @@ $pdo =  new Banco();
 //
 //NAO FACA ISSO EM PRODUCAO DEVIDO AO ATAQUE DE SQL INJECTION
 //
-$sql = "SELECT * from usuario_quarta where email ='$email' and senha ='$senha' ";
+$sql = "SELECT * from usuario where email ='$email' and password ='$senha' ";
 $result = $pdo->query($sql);
 
 
 if (empty($result->rowCount())) {
     unset($_SESSION["autenticado"]);
-   header('Location: https://aula-php-andre-eppinghaus.000webhostapp.com/2021-1/aula-quarta/index.php');
+   header('Location: http://localhost/20211/aula_quarta/index.php');
 }else{
     $_SESSION["autenticado"]=true;
-     header('Location: https://aula-php-andre-eppinghaus.000webhostapp.com/2021-1/aula-quarta/menu.php');
+     header('Location: http://localhost/20211/aula_quarta/menu.php');
 }
 
 /*

@@ -4,7 +4,7 @@ require_once("Banco.php");
 
 if (! isset($_SESSION["autenticado"])){
     
-    header('Location: https://aula-php-andre-eppinghaus.000webhostapp.com/2021-1/aula-quarta/');
+    header('Location: http://localhost/20211/aula_quarta/');
 }
 
 ?>
@@ -22,6 +22,9 @@ if (! isset($_SESSION["autenticado"])){
     <title>Tela de menu</title>
   </head>
   <body>
+      
+      <a href="consultaProduto.php">Cadastro de Produtos</a>
+      <br><br>
     <h1>Hello, world!</h1>
 
     <!-- Optional JavaScript; choose one of the two! -->
@@ -43,24 +46,24 @@ if (! isset($_SESSION["autenticado"])){
         echo "<table class='table'>";
         echo "<tr><th>Id</th><th>Email</th><th>Senha</th>";
         
-        foreach($pdo->query('SELECT * from usuario_quarta') as $row) {
-            echo "<tr><td>".$row['id']."</td><td>".$row['email']."</td><td>".$row['senha']."</td></tr>";
+        foreach($pdo->query('SELECT * from usuario') as $row) {
+            echo "<tr><td>".$row['id']."</td><td>".$row['email']."</td><td>".$row['password']."</td></tr>";
         }
         echo "</table>";
         
         echo "</div>";
     
-        foreach($pdo->query('SELECT * from usuario_quarta') as $row) {
-             $html ='<div class="card" style="width: 18rem;">
-                <img src="https://static.escolakids.uol.com.br/2019/07/paisagem-natural.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                <h5 class="card-title">'.$row['email'].'</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>';
+        // foreach($pdo->query('SELECT * from usuario') as $row) {
+        //      $html ='<div class="card" style="width: 18rem;">
+        //         <img src="https://static.escolakids.uol.com.br/2019/07/paisagem-natural.jpg" class="card-img-top" alt="...">
+        //         <div class="card-body">
+        //         <h5 class="card-title">'.$row['email'].'</h5>
+        //         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
+        //         <a href="#" class="btn btn-primary">Go somewhere</a>
+        //   </div>';
           
-            echo "$html";
-        }
+        //     echo "$html";
+        // }
         
 
     ?>
