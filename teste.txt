@@ -1,1 +1,2 @@
 https://superuser.com/questions/1515729/black-screen-in-obs-studio-screencast-on-linux
+teste 2
